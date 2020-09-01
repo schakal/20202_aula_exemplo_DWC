@@ -1,0 +1,6 @@
+CREATE TABLE `aula_dwc_20202`.`pessoa` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(50) NOT NULL,
+  `cel` VARCHAR(11) NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);
