@@ -13,7 +13,7 @@ public interface PessoaDaoIn {
 	
 	Boolean Update(Pessoa _objeto) throws SQLException;
 	
-	List<Pessoa> getAll() throws SQLException;
+	List<Pessoa> GetAll() throws SQLException;
 	
-	Pessoa get(int _id) throws SQLException;
+	Pessoa GetForID(int _id) throws SQLException;
 }
