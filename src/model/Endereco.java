@@ -8,13 +8,16 @@ public class Endereco implements Serializable {
 
 	private int id;
 	private String descricao;
+	private int pessoa_id;
 	
-	public Endereco() {}
+	public Endereco() {
+	}
 	
-	public Endereco(int id, String descricao) {
+	public Endereco(int id, String descricao, int _pessoa_id) {
 		super();
 		this.id = id;
 		this.descricao = descricao;
+		this.pessoa_id = _pessoa_id;
 	}
 
 	public int getId() {
@@ -31,6 +34,14 @@ public class Endereco implements Serializable {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+	
+	public int getPessoa_id() {
+		return pessoa_id;
+	}
+
+	public void setPessoa_id(int pessoa_id) {
+		this.pessoa_id = pessoa_id;
 	}
 
 	@Override

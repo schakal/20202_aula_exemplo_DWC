@@ -19,7 +19,15 @@ public class EnderecoDAO implements EnderecoDaoIn {
 	
 	@Override
 	public void Insert(Endereco _objeto) throws SQLException {
-		// TODO Auto-generated method stub
+
+		String SQL = "INSERT INTO endereco (descricao, pessoa_id) VALUES (?, ?)";
+		
+		PreparedStatement ps = this.conexao.prepareStatement(SQL);
+		
+		ps.setString(1, _objeto.getDescricao());
+		ps.setInt(2, _objeto.getPessoa_id());
+		
+		ps.execute();
 
 	}
 
@@ -65,7 +73,7 @@ public class EnderecoDAO implements EnderecoDaoIn {
 			int id = rs.getInt(1);
 			String descricao = rs.getString(2);
 						
-			listaEnderecos.add(new Endereco(id, descricao));
+			listaEnderecos.add(new Endereco(id, descricao, _pessoaID));
 		}
 		
 		
