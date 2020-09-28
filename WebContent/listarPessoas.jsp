@@ -1,3 +1,4 @@
+<%@page import="model.Endereco"%>
 <%@page import="model.Pessoa"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -15,6 +16,7 @@
 				<th>ID</th>
 				<th>Nome</th>
 				<th>Celular</th>
+				<th>Endereços</th>
 			</tr>
 			<%
 				List<Pessoa> listaPessoas = (List<Pessoa>)request.getAttribute("listaDePessoas");
@@ -31,6 +33,18 @@
 						<td>
 							<%=item.getCel() %>
 						</td>
+												
+						<td>
+							<%
+							for (Endereco end : item.getEnderecos()) {
+							%>
+							<%= end.toString() %>
+							<br />
+							<%
+							}
+							%>
+						</td>
+
 					</tr>
 			<%
 				}

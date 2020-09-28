@@ -1,6 +1,8 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Pessoa implements Serializable {
 
@@ -10,13 +12,18 @@ public class Pessoa implements Serializable {
 	private String nome;
 	private String cel;
 	
-	public Pessoa() {}
+	private List<Endereco> enderecos;
+	
+	public Pessoa() {
+		this.enderecos = new ArrayList<Endereco>();
+	}
 
-	public Pessoa(int id, String nome, String cel) {
+	public Pessoa(int id, String nome, String cel, List<Endereco> _enderecos) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.cel = cel;
+		this.enderecos = _enderecos;
 	}
 
 	public int getId() {
@@ -41,6 +48,14 @@ public class Pessoa implements Serializable {
 
 	public void setCel(String cel) {
 		this.cel = cel;
+	}
+	
+	public List<Endereco> getEnderecos() {
+		return enderecos;
+	}
+
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
 	}
 
 	@Override
